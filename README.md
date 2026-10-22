@@ -1,19 +1,29 @@
-# YASTER RTM Dashboard
+# YASTER RTM Dashboard (React)
 
-Standalone browser-based RTM dashboard for manually imported Yeastar CSV reports.
+Workforce management and real-time monitoring dashboard for Yeastar CSV reports rewritten as a modern React SPA using Vite, TypeScript, and Tailwind CSS.
 
 ## Features
-- Import CDR, Agent Login Activity, and Agent Pause Activity CSV exports.
-- Daily and month-to-date filters, including agent filtering.
-- Agent performance overview and pause analysis.
-- Per-agent, per-day work schedule and attendance status (On Time / Late / Absent).
-- Per-agent, per-day break planning and compliance checks.
-- Local browser storage with backup download and restore.
+- **Data Import**: Upload Yeastar CDR, Agent Login Activity, and Agent Pause Activity CSV exports.
+- **Reporting Filters**: Daily and Month-to-Date (MTD) filtering across all agents or per individual agent.
+- **Overview & KPI Dashboard**: Aggregate metrics for total calls, answered, abandoned, login time, AHT (Average Handling Time), utilization, and occupancy.
+- **Agent Performance**: Comparative analysis of answer rate, talk time, login duration, pause duration, and utilization per agent.
+- **Attendance & Schedule**: Per-agent, per-day shift scheduling (Work/OFF/Leave), start/end times, grace period, first login detection, and late minutes calculation.
+- **Break Compliance**: Configurable planned break slots per agent/day with automatic matching against actual pause timestamps, grace period tolerance, and overrun detection.
+- **Pause Analysis**: Detailed breakdown of pause instances, total auxiliary time, and categorized pause reasons.
+- **Data Persistence & Portability**: Local browser storage with JSON backup export and restore capabilities.
 
-## Run
-Open `index.html` in a modern browser. No build step is required.
+## Getting Started
 
-## Important notes
-- This is import-only and does not connect to a live Yeastar API.
-- Imported reports, schedules, and break plans are stored in the current browser's local storage. Use the backup/restore feature when moving devices or browsers.
-- CSV header formats and metric calculations should be validated against your team's actual Yeastar exports before relying on the report for operational decisions.
+### Development
+```bash
+npm run dev
+```
+
+### Build
+```bash
+npm run build
+```
+
+## Data Privacy & Architecture
+- All calculations, CSV parsing, and schedule storage happen strictly in the browser.
+- No live Yeastar API credentials or external servers are required.

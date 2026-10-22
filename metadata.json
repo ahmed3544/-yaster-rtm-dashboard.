@@ -1,0 +1,7 @@
+{
+  "name": "YASTER RTM Dashboard",
+  "description": "Workforce management and real-time monitoring dashboard for Yeastar CDR, Agent Login, and Pause Activity CSV reports with shift scheduling, break compliance, and performance metrics.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
